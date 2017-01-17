@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function (req,res){
 	res.sendFile(path.join(__dirname,'index.html'));
@@ -14,7 +15,7 @@ app.get('/add-employee.html',function(req,res){
 });
 
 app.post('/add-employee.html',function(req,res){
-	
+	res.status(200).send();
     console.log('employee '+req.body.name + ' added');
 });
 
