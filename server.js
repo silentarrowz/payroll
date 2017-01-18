@@ -30,6 +30,7 @@ var basicSalary = req.body.salary;
 var allowance = req.body.allowance;
 var esi = req.body.esi;
 var uan = req.body.uan;
+res.status(200).send('employee ' + name + ' added');
 });
 
 app.get('/add-company.html',function(req,res){
